@@ -1,0 +1,244 @@
+/* Añade este CSS a tu archivo style.css */
+/* En tu archivo styles/style.css */
+
+body {
+    background: none; /* O el color de fondo que quieras para las otras secciones */
+    color: #212529; /* Ajusta el color de texto general si es necesario */
+     min-height: 100vh; /* Mantenemos esto si quieres que cubra toda la altura */
+}
+
+
+/* Estilo para la barra de navegación: Transparente difuso (Frosted Glass) */
+.navbar.fixed-top {
+    background-color: rgba(68, 19, 73, 0.7) !important; /* Fondo morado semi-transparente */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque detrás de la navbar */
+    -webkit-backdrop-filter: blur(10px); /* Prefijo para compatibilidad con Safari */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Opcional: una línea sutil abajo */
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.85); /* Color de texto blanco semi-transparente */
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #ffffff; /* Color blanco sólido al pasar el mouse o estar activo */
+}
+
+.navbar-dark .navbar-brand {
+    color: #ffffff; /* Color blanco para el nombre/marca */
+}
+#inicio,section ,body{
+    min-height: 100vh; /* Hacer que ocupe al menos toda la altura de la ventana */
+    display: flex; /* Usamos flex para centrar el contenido verticalmente */
+    align-items: center; /* Centrar contenido verticalmente */
+    justify-content: center; /* Centrar contenido horizontalmente (ya lo hacías con text-center, pero flex ayuda) */
+    flex-direction: column; /* Apilar elementos hijos verticalmente */
+    /* Fondo morado con animación */
+    background: linear-gradient(180deg, #4b0082, #800080, #4b0082, #800080); /* Gradiente morado */
+    background-size: 400% 400%; /* Hace el gradiente más grande */
+    animation: gradientInicioAnimation 10s ease infinite; /* Animación: nombre, duración, etc. */
+    color: #ffffff; /* Texto blanco para que contraste con el fondo oscuro */
+}
+footer{
+     /* Hacer que ocupe al menos toda la altura de la ventana */
+    display: flex; /* Usamos flex para centrar el contenido verticalmente */
+    align-items: center; /* Centrar contenido verticalmente */
+    justify-content: center; /* Centrar contenido horizontalmente (ya lo hacías con text-center, pero flex ayuda) */
+    flex-direction: column; /* Apilar elementos hijos verticalmente */
+    /* Fondo morado con animación */
+    background: linear-gradient(180deg, #4b0082, #800080); /* Gradiente morado */
+    animation: gradientInicioAnimation 10s ease infinite;
+    color: #ffffff; 
+}
+
+/* Ajustes generales del carrusel para permitir superposición */
+#certificatesCarousel .carousel-inner {
+  overflow: visible; /* Permitir que los items se salgan del contenedor */
+}
+
+#certificatesCarousel .carousel-item {
+  padding: 0 15%; /* Espacio a los lados para que se vean los items vecinos. Ajusta el porcentaje según necesites */
+  transition: transform 0.5s ease; /* Asegura una transición suave */
+}
+
+/* Controla el ancho del contenido dentro del item */
+#certificatesCarousel .certificate-item-content {
+    width: 70%; /* El ancho real de la tarjeta. Ajusta este porcentaje */
+    margin: 0 auto; /* Centra el contenido dentro del item */
+}
+
+
+/* Estilo para los items no activos (laterales) */
+#certificatesCarousel .carousel-item:not(.active) {
+    opacity: 0.7; /* Reducir un poco la opacidad de los items laterales */
+    transform: scale(0.9); /* Hacerlos un poco más pequeños */
+}
+
+
+/* Puedes ocultar las flechas de navegación si solo quieres usar el deslizado */
+#certificatesCarousel .carousel-control-prev,
+#certificatesCarousel .carousel-control-next {
+  display: none; /* Ocultar las flechas */
+}
+
+/* Estilo para los indicadores si los mantienes */
+#certificatesCarousel .carousel-indicators {
+    position: absolute;
+    bottom: -40px; /* Ajusta si necesitas más o menos espacio */
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 0;
+}
+
+#certificatesCarousel .carousel-indicators button {
+    background-color: #007bff; /* Color de los indicadores, ajusta a tu tema */
+    border: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+#certificatesCarousel .carousel-indicators button.active {
+    background-color: #0056b3; /* Color del indicador activo */
+}
+
+
+/* Opcional: Estilos para la tarjeta si quieres un tema oscuro como en la imagen de ejemplo */
+#certificados .card {
+    background-color: #343a40; /* Fondo oscuro */
+    color: #ffffff; /* Texto claro */
+    border-color: #454d55; /* Borde */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+#certificados .card-title {
+    color: #17a2b8; /* Un color para el título */
+}
+
+#certificados .card-text {
+    color: #ced4da; /* Un color para el texto secundario */
+}
+
+#certificados .card img.card-img-top {
+    /* Ajusta el estilo de la imagen si es necesario, por ejemplo, border-radius solo arriba */
+     border-top-left-radius: 10px;
+     border-top-right-radius: 10px;
+}
+/* En tu archivo styles/style.css */
+
+/* --- Estilos Generales --- */
+/* Puedes definir colores base si quieres usarlos Consistentemente */
+:root {
+    --primary-color: #800080; /* Un tono de morado para el color primario */
+    --secondary-color: #4b0082; /* Un tono morado más oscuro */
+    --accent-color: #00bfff; /* Un tono azul para acentos */
+    --text-color-light: #ffffff; /* Color de texto claro */
+    --text-color-dark: #212529; /* Color de texto oscuro */
+}
+
+
+
+/* --- Estilos de la Navbar --- */
+.navbar.fixed-top {
+    background-color: rgba(var(--secondary-color-rgb, 68, 19, 73), 0.7) !important; /* Usamos un color rgba basado en --secondary-color */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(var(--text-color-light-rgb, 255, 255, 255), 0.85);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--text-color-light);
+}
+
+.navbar-dark .navbar-brand {
+    color: var(--text-color-light);
+}
+
+/* Opcional: padding superior para el contenido debajo de la navbar fija */
+body { padding-top: 56px; }
+@media (min-width: 992px) {
+  body { padding-top: 56px; }
+}
+
+
+/* --- Estilos de la Sección de Inicio --- */
+#inicio {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* Fondo morado con animación usando variables CSS */
+    background: linear-gradient(180deg, var(--secondary-color), var(--primary-color), var(--secondary-color), var(--primary-color));
+    background-size: 400% 400%;
+    animation: gradientInicioAnimation 10s ease infinite;
+    color: var(--text-color-light); /* Texto blanco */
+}
+
+/* Ajustamos padding si se usa min-height 100vh */
+#inicio.py-5 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+@keyframes gradientInicioAnimation {
+    0% { background-position: 50% 0%; }
+    50% { background-position: 50% 100%; }
+    100% { background-position: 50% 0%; }
+}
+
+
+/* --- Estilos de Botones --- */
+/* Estilo para los botones primarios (.btn-primary) para que coincidan con el tema morado */
+.btn-primary {
+    background-color: var(--primary-color); /* Fondo morado */
+    border-color: var(--secondary-color); /* Borde morado más oscuro */
+    color: var(--text-color-light); /* Texto blanco en el botón */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color); /* Fondo morado más oscuro al pasar el mouse */
+    border-color: var(--primary-color); /* Borde morado al pasar el mouse */
+    color: var(--text-color-light); /* Texto blanco al pasar el mouse */
+}
+
+/* Estilo para botones oscuros (.btn-dark) - usados en enlaces de GitHub */
+.btn-dark {
+    background-color: var(--text-color-dark); /* Fondo oscuro (negro o gris oscuro) */
+    border-color: #343a40; /* Borde oscuro */
+    color: var(--text-color-light); /* Texto blanco */
+}
+
+.btn-dark:hover {
+     background-color: lighten(var(--text-color-dark), 15%); /* Aclarar un poco al pasar el mouse (si usas Sass, si no, usa un color fijo) */
+     /* O un color fijo si no usas preprocesador: */
+     background-color: #5a6268;
+     border-color: #545b62;
+     color: var(--text-color-light);
+}
+
+
+/* --- Estilos de Secciones --- */
+/* Asegurar que las secciones que eran bg-light ahora usen un fondo que coincida con el tema */
+#habilidades.bg-light,
+#contacto.bg-light {
+     /* Puedes hacerlas transparentes para ver el fondo del body (si le pones uno) */
+     /* background-color: transparent !important; */
+
+     /* O darles un color de fondo sólido o semi-transparente que encaje con tu tema */
+     background-color: rgba(var(--text-color-light-rgb, 255, 255, 255), 0.9) !important; /* Un blanco semi-transparente */
+}
+#habilidades .card,#proyectos .card{
+    background-color: #f6e8fb; /* Fondo oscuro */
+    color: #010101; /* Texto claro */
+    border-color: #454d55; /* Borde */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
